@@ -153,3 +153,8 @@ alias ffsec='firefox -P security --no-remote &'
 alias ll='eza -lah --icons --git'                          # подробно + иконки + git
 alias lt='eza --tree --level=2 --icons'                    # дерево 2 уровня
 alias lg='eza -lah --icons --git --group-directories-first' # папки первыми
+
+# THM open-vpn
+alias thm-up='sudo systemctl start openvpn-client@thm && echo "THM VPN up"'
+alias thm-down='sudo systemctl stop openvpn-client@thm && echo "THM VPN down"'
+alias thm-ip='ip -br addr show tun0 2>/dev/null || echo "tun0 down"'
