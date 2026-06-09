@@ -17,3 +17,4 @@
 # Кэши/состояние
 *.log
 *cache*
+tmux/.config/tmux/plugins/
