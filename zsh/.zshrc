@@ -85,6 +85,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git z python pip sudo extract web-search copypath copyfile zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
+ZSH_HIGHLIGHT_STYLES[comment]='fg=#565f89'
 
 # User configuration
 
