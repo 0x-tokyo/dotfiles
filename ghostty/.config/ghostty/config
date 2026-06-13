@@ -1,5 +1,6 @@
 # Тема 
 theme = TokyoNight Storm 
+background = 1a1826
 
 # ANSI palette overrides (Tokyonight Storm tweaks)
 # green (cava, git added)
@@ -71,8 +72,9 @@ mouse-hide-while-typing = true
 clipboard-paste-protection = true
 clipboard-trim-trailing-spaces = true
 confirm-close-surface = true
-background-opacity = 0.88
+background-opacity = 0.85
 copy-on-select = clipboard
+background-blur = true
 
 # Quick Terminal
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
