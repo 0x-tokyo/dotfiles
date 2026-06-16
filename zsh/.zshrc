@@ -144,8 +144,7 @@ alias bat='batcat'
 jup() { cd ~/jupyter-env && source ~/jupyter-env/bin/activate && jupyter lab; }
 
 # fzf shell-интеграция (Ctrl+T, Ctrl+R, Alt+C)
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+source <(fzf --zsh)
 # fzf превью через bat (batcat на Ubuntu)
 export FZF_CTRL_T_OPTS="--preview 'batcat --color=always --style=numbers --line-range=:500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
