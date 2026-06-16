@@ -149,6 +149,9 @@ source <(fzf --zsh)
 export FZF_CTRL_T_OPTS="--preview 'batcat --color=always --style=numbers --line-range=:500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
+# gpg-agent
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+
 # firefox
 alias ff-sec='firefox -P security -no-remote &>/dev/null & disown'
 alias ff-pers='firefox -P personal -no-remote &>/dev/null & disown'
