@@ -150,7 +150,8 @@ export FZF_CTRL_T_OPTS="--preview 'batcat --color=always --style=numbers --line-
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
 # firefox
-alias ffsec='firefox -P security --no-remote &'
+alias ff-sec='firefox -P security -no-remote &>/dev/null & disown'
+alias ff-pers='firefox -P personal -no-remote &>/dev/null & disown'
 
 # eza
 alias ll='eza -lah --icons --git'                          # подробно + иконки + git
