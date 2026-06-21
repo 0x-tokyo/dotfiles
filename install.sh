@@ -50,7 +50,7 @@ NVIM_DIR="$HOME/.config/nvim"
 if [[ -d "$NVIM_DIR" ]]; then
     echo "  ~/.config/nvim уже существует, пропуск"
 else
-    git clone git@github.com:wnchstrr/nvim-config "$NVIM_DIR"
+    git clone git@github.com:0x-tokyo/nvim-config.git "$NVIM_DIR"
 fi
 
 echo "==> Восстановление GTK-темы (dconf)"
