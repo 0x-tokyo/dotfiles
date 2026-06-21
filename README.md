@@ -28,7 +28,7 @@ dotfiles/
 Running `stow <package>` from the repo root creates symlinks like
 `~/.config/hypr/hyprland.conf → ~/dotfiles/hypr/.config/hypr/hyprland.conf`.
 
-> **nvim** is a separate repo: [wnchstrr/nvim-config](https://github.com/wnchstrr/nvim-config).
+> **nvim** is a separate repo: [0x-tokyo/nvim-config](https://github.com/0x-tokyo/nvim-config).
 > `install.sh` clones it into `~/.config/nvim`.
 
 > **thunderbird/** is *not* a stow package — the TB profile directory name is
@@ -61,7 +61,7 @@ Host github.com
 ### 2. Clone and bootstrap
 
 ```bash
-git clone https://github.com/wnchstrr/dotfiles ~/dotfiles
+git clone https://github.com/0x-tokyo/dotfiles ~/dotfiles
 cd ~/dotfiles
 ./install.sh
 ```
