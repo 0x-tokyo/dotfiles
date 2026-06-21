@@ -130,9 +130,14 @@ alias gp='git push'
 alias gpf='git push -u origin'
 alias gl='git log --oneline'
 
-# Xclip
-copy() { wl-copy; }
-paste() { wl-paste; }
+# Xclip/wl-copy
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    alias copy='wl-copy'
+    alias paste='wl-paste'
+else
+    alias copy='xclip -selection clipboard'
+    alias paste='xclip -selection clipboard -o'
+fi
 
 # TheFuck
 eval "$(thefuck --alias)"
@@ -165,3 +170,10 @@ alias lg='eza -lah --icons --git --group-directories-first' # папки пер�
 alias thm-up='sudo systemctl start openvpn-client@thm && echo "THM VPN up"'
 alias thm-down='sudo systemctl stop openvpn-client@thm && echo "THM VPN down"'
 alias thm-ip='ip -br addr show tun0 2>/dev/null || echo "tun0 down"'
+
+# ssh-agent
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -s > ~/.ssh/agent-env
+fi
+[ -f ~/.ssh/agent-env ] && source ~/.ssh/agent-env > /dev/null
+ssh-add -l > /dev/null 2>&1 || ssh-add ~/.ssh/id_ed25519_github ~/.ssh/id_ed25519_vpsFN
