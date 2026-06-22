@@ -154,9 +154,6 @@ source <(fzf --zsh)
 export FZF_CTRL_T_OPTS="--preview 'batcat --color=always --style=numbers --line-range=:500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
-# gpg-agent
-export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-
 # firefox
 alias ff-sec='firefox -P security -no-remote &>/dev/null & disown'
 alias ff-pers='firefox -P personal -no-remote &>/dev/null & disown'
@@ -171,5 +168,3 @@ alias thm-up='sudo systemctl start openvpn-client@thm && echo "THM VPN up"'
 alias thm-down='sudo systemctl stop openvpn-client@thm && echo "THM VPN down"'
 alias thm-ip='ip -br addr show tun0 2>/dev/null || echo "tun0 down"'
 
-# keychain
-eval "$(keychain --eval --quiet id_ed25519_github id_ed25519_vpsFN)"
