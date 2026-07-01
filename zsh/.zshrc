@@ -168,3 +168,5 @@ alias thm-up='sudo systemctl start openvpn-client@thm && echo "THM VPN up"'
 alias thm-down='sudo systemctl stop openvpn-client@thm && echo "THM VPN down"'
 alias thm-ip='ip -br addr show tun0 2>/dev/null || echo "tun0 down"'
 
+# Seagate
+alias seagate='sudo mount -t ntfs-3g -o force,remove_hiberfile UUID=88223F32223F249A /mnt/seagate'
