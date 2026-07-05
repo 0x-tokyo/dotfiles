@@ -18,3 +18,8 @@
 *.log
 *cache*
 tmux/.config/tmux/plugins/
+
+# Wireshark
+wireshark/.config/wireshark/profiles/*/preferences
+wireshark/.config/wireshark/profiles/*/extcap.cfg
+wireshark/.config/wireshark/profiles/*/recent
