@@ -349,10 +349,13 @@
 
   #####################################[ vcs: git status ]######################################
   # Branch icon. Set this parameter to '\UE0A0 ' for the popular Powerline branch icon.
-  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
+  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uE725 '
   # Untracked files icon. It's really a question mark, your font isn't broken.
   # Change the value of this parameter to show a different icon.
   typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
+
+  # Use the generic git icon instead of hosting-provider-specific icons (e.g. GitHub octocat).
+  typeset -g POWERLEVEL9K_VCS_GIT_REMOTE_ICONS=('*' VCS_GIT_ICON)
 
   # Formatter for Git status.
   #
