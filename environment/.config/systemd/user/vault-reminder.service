@@ -1,0 +1,7 @@
+[Unit]
+Description=Vault audit reminder (notify + copy to clipboard)
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/vault-reminder.sh
+KillMode=mixed

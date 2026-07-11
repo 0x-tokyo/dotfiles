@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup dotfiles
+OnFailure=backup-failed.service
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/backup
+ExecStartPost=/usr/bin/notify-send -a "CronJob" "Backup" "Готово"
+ExecStartPost=/usr/bin/canberra-gtk-play -f %h/.local/share/sounds/backup-ok.ogg
