@@ -23,3 +23,13 @@ tmux/.config/tmux/plugins/
 wireshark/.config/wireshark/profiles/*/preferences
 wireshark/.config/wireshark/profiles/*/extcap.cfg
 wireshark/.config/wireshark/profiles/*/recent
+
+# Claude Code state — never belongs in the package (see claude/.claude/,
+# only CLAUDE.md/settings.json/commands/ are ever copied in there deliberately)
+claude/.claude/.credentials*
+claude/.claude/sessions/
+claude/.claude/projects/
+claude/.claude/todos/
+claude/.claude/statsig/
+claude/.claude/shell-snapshots/
+claude/.claude/*.log
