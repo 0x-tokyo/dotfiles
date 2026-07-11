@@ -1,6 +1,6 @@
 * {
     font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 13px;
+    font-size: 11px;
     border: none;
     border-radius: 0;
     min-height: 0;
@@ -81,16 +81,21 @@ window#waybar {
 #custom-cava {
     color: #3b8e9e;
     padding: 0 8px;
-    font-size: 14px;
+    font-size: 12px;
 }
 #mpris {
     color: #7aa2f7;
     padding: 0 10px;
     font-style: italic;
 }
+#pulseaudio-slider {
+    padding: 0;
+    min-height: 0;
+}
 #pulseaudio-slider slider {
     min-width: 0px;
     min-height: 0px;
+    margin: 0;
     background: transparent;
     background-image: none;
     border: none;

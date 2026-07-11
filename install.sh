@@ -17,12 +17,12 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DOTFILES_DIR"
 
 # Пакеты Stow (имена папок в репо)
-PACKAGES=(ghostty zsh tmux hypr rofi waybar environment)
+PACKAGES=(ghostty zsh tmux hypr rofi waybar cava qbittorrent environment)
 
 echo "==> Проверка зависимостей"
 for cmd in stow git dconf; do
     if ! command -v "$cmd" &>/dev/null; then
-        echo "ОШИБКА: '$cmd' не установлен. Поставь: sudo apt install $cmd"
+        echo "ОШИБКА: '$cmd' не установлен. Поставь: sudo pacman -S $cmd"
         exit 1
     fi
 done
@@ -88,8 +88,5 @@ echo "==> Готово."
 echo "    Не забудь вручную:"
 echo "      - tmux: prefix + I (плагины)"
 echo "      - TB: включить legacyUserProfileCustomizations.stylesheets (см. выше)"
-echo "      - Пакеты ставить НЕ через snap (система snap-free):"
-echo "          apt → ghostty, waybar, rofi, hyprpaper, swaync, hyprshot, stow..."
-echo "          tarball → Thunderbird (~/.local/lib), Telegram (/opt)"
+echo "      - Пакеты: pacman -S для official repo, yay -S для AUR (см. README Applications)"
 echo "          flatpak → Signal (org.signal.Signal)"
-echo "          Mozilla apt repo → Firefox (см. README про pinning)"

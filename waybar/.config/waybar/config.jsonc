@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 32,
+    "height": 24,
     "spacing": 6,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["hyprland/submap", "custom/cava", "mpris", "clock"],
@@ -51,13 +51,13 @@
         "on-click": "ghostty -e htop"
     },
     "memory": {
-        "format": " {percentage}%",
+        "format": " {percentage}%",
         "interval": 2,
         "on-click": "ghostty -e htop"
     },
     "network": {
         "format-wifi": " {signalStrength}%",
-        "format-ethernet": " {ifname}",
+        "format-ethernet": " {ifname}",
         "format-disconnected": "  off",
         "tooltip-format": "{ifname}: {ipaddr}",
         "on-click": "nm-connection-editor"
