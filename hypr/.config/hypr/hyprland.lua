@@ -273,12 +273,12 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + t",      hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q",      hl.dsp.window.close())
 hl.bind(mainMod .. " + M",      hl.dsp.exec_cmd(music))
-hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("hyprctl dispatch exit"))
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exit())
 hl.bind(mainMod .. " + E",      hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + D",      hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("rofi -show run"))
 hl.bind(mainMod .. " + V",      hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + F",      hl.dsp.exec_cmd("hyprctl dispatch fullscreen"))
+hl.bind(mainMod .. " + F",      hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + J",      hl.dsp.layout("togglesplit"))
 
 -- Навигация между окнами (vi-style + стрелки)
@@ -290,11 +290,11 @@ hl.bind(mainMod .. " + h",     hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + l",     hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + k",     hl.dsp.focus({ direction = "up" }))
 
--- Перемещение окон (fallback через hyprctl dispatch - не уверен в нативном lua-синтаксисе movewindow)
-hl.bind(mainMod .. " + SHIFT + left",  hl.dsp.exec_cmd("hyprctl dispatch movewindow l"))
-hl.bind(mainMod .. " + SHIFT + right", hl.dsp.exec_cmd("hyprctl dispatch movewindow r"))
-hl.bind(mainMod .. " + SHIFT + up",    hl.dsp.exec_cmd("hyprctl dispatch movewindow u"))
-hl.bind(mainMod .. " + SHIFT + down",  hl.dsp.exec_cmd("hyprctl dispatch movewindow d"))
+-- Перемещение окон (своп с соседним в направлении)
+hl.bind(mainMod .. " + SHIFT + left",  hl.dsp.window.swap({ direction = "l" }))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.swap({ direction = "r" }))
+hl.bind(mainMod .. " + SHIFT + up",    hl.dsp.window.swap({ direction = "u" }))
+hl.bind(mainMod .. " + SHIFT + down",  hl.dsp.window.swap({ direction = "d" }))
 
 -- Рабочие столы
 for i = 1, 10 do
@@ -319,11 +319,11 @@ hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Resize (mod+Ctrl+стрелки), fallback через hyprctl dispatch
-hl.bind(mainMod .. " + CTRL + left",  hl.dsp.exec_cmd("hyprctl dispatch resizeactive -40 0"))
-hl.bind(mainMod .. " + CTRL + right", hl.dsp.exec_cmd("hyprctl dispatch resizeactive 40 0"))
-hl.bind(mainMod .. " + CTRL + up",    hl.dsp.exec_cmd("hyprctl dispatch resizeactive 0 -40"))
-hl.bind(mainMod .. " + CTRL + down",  hl.dsp.exec_cmd("hyprctl dispatch resizeactive 0 40"))
+-- Resize (mod+Ctrl+стрелки)
+hl.bind(mainMod .. " + CTRL + left",  hl.dsp.window.resize({ x = -40, y = 0,  relative = true }))
+hl.bind(mainMod .. " + CTRL + right", hl.dsp.window.resize({ x = 40,  y = 0,  relative = true }))
+hl.bind(mainMod .. " + CTRL + up",    hl.dsp.window.resize({ x = 0,   y = -40, relative = true }))
+hl.bind(mainMod .. " + CTRL + down",  hl.dsp.window.resize({ x = 0,   y = 40,  relative = true }))
 
 -- Блокировка экрана
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("hyprlock"))
