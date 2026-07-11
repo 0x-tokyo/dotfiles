@@ -21,6 +21,7 @@ dotfiles/
 ├── waybar/       .config/waybar/         → config.jsonc + style.css
 ├── cava/         .config/cava/           → waybar_config (raw ascii output for waybar's custom/cava module)
 ├── qbittorrent/  .local/share/qbittorrent-themes/ → dracula.qbtheme (custom UI theme)
+├── claude/       .claude/                → CLAUDE.md, commands/ (slash prompts), settings.json (plugin marketplaces)
 ├── kitty/        .config/kitty/          → kitty.conf + theme (dormant — kitty not installed, kept for reference)
 ├── wezterm/      .config/wezterm/        → wezterm.lua + bg.jpg (dormant — wezterm not installed, kept for reference)
 ├── environment/  .config/environment.d/  → systemd user env vars (PATH, QT platform theme, ssh-agent socket) + systemd user units (backup, vault-reminder, whisper-daemon, ssh-agent)
@@ -50,6 +51,13 @@ Running `stow <package>` from the repo root creates symlinks like
 > care). Stow it explicitly: `stow ssh`. Private hosts/keys go in
 > `~/.ssh/config.d/local.conf` (untracked, gitignored) — the tracked
 > `ssh/.ssh/config` just has `Include ~/.ssh/config.d/*` plus the GitHub block.
+
+> **claude/** — `settings.json` lists `extraKnownMarketplaces` (`karpathy-skills`,
+> `claude-plugins-official`) and `enabledPlugins` (`security-guidance`,
+> `code-review`); Claude Code pulls the actual plugin code from those
+> marketplaces itself, nothing else to restore manually. Session state
+> (`.credentials.json`, `history.jsonl`, `projects/`, etc.) is intentionally
+> not stowed — machine/session-local, not config.
 
 > **kitty/** and **wezterm/** are *not* in `PACKAGES` — carried over from an old
 > machine's backup for reference, neither terminal is currently installed/used
