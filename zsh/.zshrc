@@ -156,7 +156,7 @@ export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
 # firefox
 alias ff-sec='firefox -P security -no-remote &>/dev/null & disown'
-alias ff-pers='firefox -P personal -no-remote &>/dev/null & disown'
+alias ff-def='firefox -P default -no-remote &>/dev/null & disown'
 
 # eza
 alias ll='eza -lah --icons --git'                          # подробно + иконки + git
@@ -170,3 +170,8 @@ alias thm-ip='ip -br addr show tun0 2>/dev/null || echo "tun0 down"'
 
 # Seagate
 alias seagate='sudo mount -t ntfs-3g -o force,remove_hiberfile UUID=88223F32223F249A /mnt/seagate'
+
+# BEGIN SNIPPET: Platform.sh CLI configuration
+HOME=${HOME:-'/home/0x-tokyo'}
+export PATH="$HOME/"'.platformsh/bin':"$PATH"
+if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET

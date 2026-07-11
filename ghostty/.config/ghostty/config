@@ -16,7 +16,7 @@ custom-shader-animation = true
 
 # Шрифт
 font-family = "Cascadia Mono NF"
-font-size = 19
+font-size = 13
 
 # Окно
 window-padding-x = 8

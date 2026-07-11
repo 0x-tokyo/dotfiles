@@ -2,8 +2,11 @@
 accent-color='slate'
 color-scheme='prefer-dark'
 cursor-size=24
-cursor-theme='Bibata-Modern-Classic'
+cursor-theme='Bibata-Modern-Ice'
+document-font-name='Adwaita Sans 10'
+font-name='Adwaita Sans 9'
 gtk-theme='Tokyonight-Dark-Storm'
 icon-theme='Papirus-Dark'
+monospace-font-name='Adwaita Mono 9'
 show-battery-percentage=true
 toolkit-accessibility=false
