@@ -3,7 +3,7 @@
 set -euo pipefail
 
 WALL_DIRS=("$HOME/Pictures/Wallpapers" "$HOME/Pictures/walls")
-MONITOR="${1:-eDP-2}"
+MONITOR="${1:-eDP-1}"
 STATE_CONF="$HOME/.cache/hypr/current-wall.conf"
 
 # случайный файл нужных форматов, .git исключён
@@ -12,6 +12,13 @@ wall=$(find "${WALL_DIRS[@]}" -type d -name .git -prune -o \
     | shuf -n 1)
 
 [ -z "$wall" ] && { notify-send "random-wall" "Нет картинок"; exit 1; }
+
+# hyprpaper 0.8.x: preload/unload не реализованы (только "wallpaper" в IPC),
+# поэтому смена всегда синхронный decode внутри демона — виден кадр со старыми
+# обоями, пока грузится новая картинка. Маскируем чёрной заглушкой на подмену.
+BLACK="$(dirname "$0")/black.png"
+hyprctl hyprpaper wallpaper "$MONITOR, $BLACK, cover"
+sleep 0.2
 
 # сменить сейчас (текущая сессия)
 hyprctl hyprpaper wallpaper "$MONITOR, $wall, cover"
