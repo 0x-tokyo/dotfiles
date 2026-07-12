@@ -50,14 +50,16 @@ local menu        = "rofi -show drun"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
-hl.exec_cmd("pkill -x waybar; waybar &")
-hl.exec_cmd("pkill -x hyprpaper; hyprpaper &")
-hl.exec_cmd("pkill -x hypridle; hypridle &")
-hl.exec_cmd("pgrep -x swaync >/dev/null || swaync &")
-hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
-hl.exec_cmd("pgrep -f 'wl-paste --type text --watch cliphist' >/dev/null || wl-paste --type text --watch cliphist store &")
-hl.exec_cmd("pgrep -f 'wl-paste --type image --watch cliphist' >/dev/null || wl-paste --type image --watch cliphist store &")
-hl.exec_cmd("pgrep -x playerctld >/dev/null || playerctld daemon &")
+hl.on("hyprland.start", function ()
+    hl.exec_cmd("pkill -x waybar; waybar &")
+    hl.exec_cmd("pkill -x hyprpaper; hyprpaper &")
+    hl.exec_cmd("pkill -x hypridle; hypridle &")
+    hl.exec_cmd("pgrep -x swaync >/dev/null || swaync &")
+    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
+    hl.exec_cmd("pgrep -f 'wl-paste --type text --watch cliphist' >/dev/null || wl-paste --type text --watch cliphist store &")
+    hl.exec_cmd("pgrep -f 'wl-paste --type image --watch cliphist' >/dev/null || wl-paste --type image --watch cliphist store &")
+    hl.exec_cmd("pgrep -x playerctld >/dev/null || playerctld daemon &")
+end)
 
 
 -------------------------------
