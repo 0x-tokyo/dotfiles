@@ -175,3 +175,6 @@ alias seagate='sudo mount -t ntfs-3g -o force,remove_hiberfile UUID=88223F32223F
 HOME=${HOME:-'/home/0x-tokyo'}
 export PATH="$HOME/"'.platformsh/bin':"$PATH"
 if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET
+
+# zshrc.local
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
