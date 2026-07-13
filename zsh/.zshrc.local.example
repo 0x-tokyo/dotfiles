@@ -1,0 +1,3 @@
+# copy to ~/.zshrc.local, fill real values (NOT tracked in git)
+export WORMHOLE_RELAY_URL="ws://<VPS_TUNNEL_IP>:4000/v1"
+export WORMHOLE_TRANSIT_HELPER="tcp:<VPS_TUNNEL_IP>:4001"
