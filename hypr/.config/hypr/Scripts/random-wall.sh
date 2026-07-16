@@ -3,7 +3,7 @@
 set -euo pipefail
 
 WALL_DIRS=("$HOME/Pictures/Wallpapers" "$HOME/Pictures/walls")
-MONITOR="${1:-eDP-1}"
+MONITOR="${1:-*}"
 STATE_CONF="$HOME/.cache/hypr/current-wall.conf"
 
 # случайный файл нужных форматов, .git исключён
