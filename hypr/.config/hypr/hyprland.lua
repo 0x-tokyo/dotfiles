@@ -85,6 +85,12 @@ end)
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
+-- environment.d/ssh_auth_socket.conf выставляет её только для systemd-юнитов
+-- (ssh-agent.service и т.п.) — LightDM запускает Hyprland напрямую, в обход
+-- systemd-активации, так что графическая сессия (и всё, что из неё exec'ается,
+-- вкл. GUI-приложения типа Obsidian) эту переменную никогда не наследует.
+hl.env("SSH_AUTH_SOCK", (os.getenv("XDG_RUNTIME_DIR") or "/run/user/1000") .. "/ssh-agent.socket")
+
 hl.env("XCURSOR_SIZE", "20")
 hl.env("HYPRCURSOR_SIZE", "20")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
