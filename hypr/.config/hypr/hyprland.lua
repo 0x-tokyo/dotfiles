@@ -71,7 +71,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("pkill -x hyprpaper; hyprpaper &")
     hl.exec_cmd("pkill -x hypridle; hypridle &")
     hl.exec_cmd("pgrep -x swaync >/dev/null || swaync &")
-    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
+    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
     hl.exec_cmd("pgrep -f 'wl-paste --type text --watch cliphist' >/dev/null || wl-paste --type text --watch cliphist store &")
     hl.exec_cmd("pgrep -f 'wl-paste --type image --watch cliphist' >/dev/null || wl-paste --type image --watch cliphist store &")
     hl.exec_cmd("pgrep -x playerctld >/dev/null || playerctld daemon &")
@@ -94,7 +94,7 @@ hl.env("SSH_AUTH_SOCK", (os.getenv("XDG_RUNTIME_DIR") or "/run/user/1000") .. "/
 hl.env("XCURSOR_SIZE", "20")
 hl.env("HYPRCURSOR_SIZE", "20")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
-hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
+hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
 
 -- GPU-специфичные env (NVIDIA и т.п.) — машинно-локальные, см. local.lua
 
