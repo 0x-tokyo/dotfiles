@@ -6,4 +6,4 @@ OnFailure=backup-failed.service
 Type=oneshot
 ExecStart=%h/.local/bin/backup
 ExecStartPost=/usr/bin/notify-send -a "CronJob" "Backup" "Готово"
-ExecStartPost=/usr/bin/canberra-gtk-play -f %h/.local/share/sounds/backup-ok.ogg
+ExecStartPost=/usr/bin/paplay %h/.local/share/sounds/backup-ok.ogg

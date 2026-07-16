@@ -4,4 +4,4 @@ Description=Backup failure notification
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/notify-send -a "CronJob" -u critical "Backup FAILED" "см. journalctl --user -u backup.service"
-ExecStart=/usr/bin/canberra-gtk-play -f %h/.local/share/sounds/backup-fail.ogg
+ExecStart=/usr/bin/paplay %h/.local/share/sounds/backup-fail.ogg
