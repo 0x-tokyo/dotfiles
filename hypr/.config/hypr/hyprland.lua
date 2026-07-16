@@ -478,6 +478,13 @@ hl.window_rule({
     float = true,
 })
 hl.window_rule({
+    name = "nemo-float",
+    match = { class = "nemo" },
+    float = true,
+    size = "900 600",
+    opacity = "0.82 0.82",
+})
+hl.window_rule({
     name = "calculator-float",
     match = { class = "org.gnome.Calculator" },
     float = true,
