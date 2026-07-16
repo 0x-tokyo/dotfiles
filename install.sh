@@ -17,7 +17,7 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DOTFILES_DIR"
 
 # Пакеты Stow (имена папок в репо)
-PACKAGES=(ghostty zsh tmux hypr rofi waybar cava qbittorrent claude environment)
+PACKAGES=(ghostty zsh tmux hypr rofi waybar cava qbittorrent claude environment gtk-theme)
 
 echo "==> Проверка зависимостей"
 for cmd in stow git dconf; do
