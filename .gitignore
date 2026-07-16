@@ -33,3 +33,6 @@ claude/.claude/todos/
 claude/.claude/statsig/
 claude/.claude/shell-snapshots/
 claude/.claude/*.log
+
+# local.conf
+hypr/.config/hypr/local.conf
