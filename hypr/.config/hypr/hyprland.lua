@@ -380,6 +380,28 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
 
+----------------------
+---- POWER SUBMAP ----
+----------------------
+
+-- Вход в режим питания: Super+Shift+P
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.submap("power"))
+
+-- opts.submap (per-bind) не существует в API — submap определяется контекстом
+-- hl.define_submap(name, resetKey, fn): все hl.bind() внутри fn попадают в "power".
+hl.define_submap("power", "escape", function()
+    hl.bind("s", function()
+        hl.dispatch(hl.dsp.exec_cmd("systemctl suspend"))
+        hl.dispatch(hl.dsp.submap("reset"))
+    end)
+    hl.bind("p",      hl.dsp.exec_cmd("systemctl poweroff"))
+    hl.bind("r",      hl.dsp.exec_cmd("systemctl reboot"))
+    hl.bind("e",      hl.dsp.exec_cmd("loginctl terminate-user $USER"))
+    hl.bind("escape", hl.dsp.submap("reset"))
+    hl.bind("q",      hl.dsp.submap("reset"))
+end)
+
+
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
