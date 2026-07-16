@@ -64,6 +64,10 @@ local menu        = "rofi -show drun"
 --
 hl.on("hyprland.start", function ()
     hl.exec_cmd("pkill -x waybar; waybar &")
+    -- hyprpaper.conf's `source=` errors out hard if the file doesn't exist
+    -- (not a soft fallback) — on a fresh machine, before random-wall.sh has
+    -- ever run, hyprpaper would otherwise fail to start entirely.
+    hl.exec_cmd("mkdir -p ~/.cache/hypr && [ -f ~/.cache/hypr/current-wall.conf ] || printf 'wallpaper {\\n    monitor = *\\n    path = ~/Pictures/Wallpapers/wall.png\\n    fit_mode = cover\\n}\\n' > ~/.cache/hypr/current-wall.conf")
     hl.exec_cmd("pkill -x hyprpaper; hyprpaper &")
     hl.exec_cmd("pkill -x hypridle; hypridle &")
     hl.exec_cmd("pgrep -x swaync >/dev/null || swaync &")
