@@ -71,6 +71,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("pgrep -f 'wl-paste --type text --watch cliphist' >/dev/null || wl-paste --type text --watch cliphist store &")
     hl.exec_cmd("pgrep -f 'wl-paste --type image --watch cliphist' >/dev/null || wl-paste --type image --watch cliphist store &")
     hl.exec_cmd("pgrep -x playerctld >/dev/null || playerctld daemon &")
+    hl.exec_cmd("pgrep -x xdg-desktop-portal-hyprland >/dev/null || /usr/lib/xdg-desktop-portal-hyprland &")
 end)
 
 
