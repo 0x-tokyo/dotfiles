@@ -34,5 +34,5 @@ claude/.claude/statsig/
 claude/.claude/shell-snapshots/
 claude/.claude/*.log
 
-# local.conf
-hypr/.config/hypr/local.conf
+# machine-local hypr overrides
+hypr/.config/hypr/local.lua

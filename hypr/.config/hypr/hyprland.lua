@@ -30,6 +30,18 @@ hl.monitor({
     scale    = "auto",
 })
 
+-- Опциональный машинно-локальный конфиг (монитор-оверрайды и т.п.),
+-- не в git — см. .gitignore. Грузится после базового monitor-правила выше,
+-- чтобы специфичные для машины monitor()-вызовы могли его дополнить.
+do
+    local local_config = os.getenv("HOME") .. "/.config/hypr/local.lua"
+    local f = io.open(local_config, "r")
+    if f then
+        f:close()
+        dofile(local_config)
+    end
+end
+
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -72,6 +84,8 @@ hl.env("XCURSOR_SIZE", "20")
 hl.env("HYPRCURSOR_SIZE", "20")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
 hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
+
+-- GPU-специфичные env (NVIDIA и т.п.) — машинно-локальные, см. local.lua
 
 
 -----------------------
