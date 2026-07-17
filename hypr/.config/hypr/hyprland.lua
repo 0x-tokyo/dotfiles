@@ -74,6 +74,11 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
     hl.exec_cmd("pgrep -x playerctld >/dev/null || playerctld daemon &")
     hl.exec_cmd("pgrep -x xdg-desktop-portal-hyprland >/dev/null || /usr/lib/xdg-desktop-portal-hyprland &")
+    -- Раньше это были systemd user unit'ы (WantedBy=default.target) — они
+    -- стартовали до готовности Wayland-сокета и падали в start-limit-hit
+    -- насовсем. Запуск отсюда гарантирует, что сокет уже поднят.
+    hl.exec_cmd("pkill -f 'wl-paste --type text --watch cliphist'; wl-paste --type text --watch cliphist store &")
+    hl.exec_cmd("pkill -f 'wl-paste --type image --watch cliphist'; wl-paste --type image --watch cliphist store &")
 end)
 
 
