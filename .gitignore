@@ -36,3 +36,7 @@ claude/.claude/*.log
 
 # machine-local hypr overrides
 hypr/.config/hypr/local.lua
+
+# cava копирует дефолтные шейдеры/темы в конфиг при запуске
+cava/.config/cava/shaders/
+cava/.config/cava/themes/

@@ -158,13 +158,19 @@ hl.config({
             enabled      = true,
             range        = 15,
             render_power = 3,
-            color        = "rgba(00000055)",
+            color        = { colors = {"rgba(00000055)", "rgba(5fb3a166)"}, angle = 45 },
         },
 
         blur = {
             enabled = true,
             size    = 3,
             passes  = 1,
+        },
+
+        -- Мерцает на полупрозрачных окнах в 0.56, включить после фикса:
+        -- https://forum.hypr.land/t/motion-blur-issues/1661
+        motion_blur = {
+            enabled = false,
         },
     },
 
@@ -200,6 +206,7 @@ hl.animation({ leaf = "workspaces",    enabled = true,  speed = 1.94, bezier = "
 hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
+hl.animation({ leaf = "shadowangle",   enabled = true,  speed = 8,    bezier = "linear",       style = "loop" })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
